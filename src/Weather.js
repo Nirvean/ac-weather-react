@@ -181,7 +181,7 @@ export default function Weather() {
           </div>
           <div>
             <button id="github-button" type="button" title="Open-source code by Sonia 🐚">
-                <a href="https://github.com/Nirvean/ac-weather-react" class="github-link" target="_blank">
+                <a href="https://github.com/Nirvean/ac-weather-react" class="github-link" target="_blank" rel="noreferrer">
                     <i class="fa-brands fa-github github-icon"></i>
                 </a>
             </button>
