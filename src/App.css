@@ -1,31 +1,39 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .container {
+    transform: scale(0.76) translate(11%, -28%);
+    min-width: 75%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  body {
+    overflow-y: hidden;
+  }
+
+  .github-icon {
+    font-size: 400px !important;
+    top: 290px !important;
+    left: 1100px !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background-image: url(../images/ac-background-image-noleaf-github.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  background-color: transparent;
+  border-style: solid;
+  border-width: thin;
+  border-color: transparent;
+  border-radius: 10px;
+  position: relative;
+  right: 240px;
+  top: 15px;
 }
 
 @keyframes App-logo-spin {
