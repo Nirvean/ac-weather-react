@@ -51,14 +51,14 @@ body {
   left: 1395px;
 }
 
-.footer {
+/*.footer {
   font-size: 12px;
   font-family: "Arvo", serif;
   color: #00b6e9;
   position: absolute;
   right: 190px;
   top: 800px;
-}
+}*/
 
 .github-link {
   text-decoration: none;
