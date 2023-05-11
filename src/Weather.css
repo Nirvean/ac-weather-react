@@ -9,7 +9,6 @@
   outline: none;
   font-family: "Arvo", serif;
   position: relative;
-  bottom: 10px;
   color: #ffffff;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   /*text-indent: 10px; sirve para desplazar el texto del input*/
@@ -29,19 +28,17 @@ input::placeholder {
   border: none;
   border-radius: 30px;
   background-color: #6bb888;
-  padding: 10px;
-  margin-left: -45px;
+  margin-left: -30px;
   position: relative;
-  bottom: 10px;
-  left: -55px;
+  left: -65px;
 }
 
 .lbar {
   color: #ffffff;
   font-family: "Arvo", serif;
   position: relative;
-  left: -53px;
-  bottom: 8px;
+  left: -55px;
+  bottom: -2px;
   font-size: 22px;
   text-align: center;
 }
@@ -55,9 +52,8 @@ input::placeholder {
   border: none;
   border-radius: 30px;
   background-color: #6bb888;
-  margin-left: -49px;
   position: relative;
-  bottom: 10px;
+  margin-left: -46px;
 }
 
 #secondary-buttons {
@@ -72,7 +68,7 @@ input::placeholder {
   outline: none;
   font-family: "Arvo", serif;
   position: relative;
-  bottom: 10px;
+  left: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -87,12 +83,12 @@ input::placeholder {
   border: none;
   border-radius: 30px;
   background-color: #6bb888;
+  position: relative;
+  left: -15px;
 }
 
 .location-icon {
   color: #ffffff;
-  position: relative;
-  left: -15px;
 }
 
 #fahrenheit-celsius-button {
@@ -112,13 +108,13 @@ input::placeholder {
   border: none;
   border-radius: 30px;
   background-color: #6bb888;
+  position: relative;
+  left: 15px;
 }
 
 .play-icon,
 .pause-icon {
   color: #ffffff;
-  position: relative;
-  left: 15px;
 }
 
 audio {
@@ -126,7 +122,10 @@ audio {
 }
 
 .second-row {
-  padding-top: 15px;
+  padding-top: 30px;
+  justify-content: space-between;
+  margin-right: 0.5px;
+  margin-left: 0.5px;
 }
 
 #current-conditions {
@@ -137,8 +136,7 @@ audio {
   width: 300px;
   outline: none;
   font-family: "Arvo", serif;
-  position: absolute;
-  left: 46px;
+  position: relative;
   color: #ffffff;
   text-align: center;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
@@ -185,7 +183,6 @@ audio {
   outline: none;
   font-family: "Arvo", serif;
   position: relative;
-  left: 574px;
   color: #ffffff;
   text-align: right;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
@@ -216,7 +213,7 @@ audio {
 }
 
 .third-row {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 #forecast-day-1,

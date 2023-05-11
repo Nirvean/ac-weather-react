@@ -70,7 +70,7 @@ export default function Weather() {
               </ul>
             </div>
           </div>
-          <div className="row justify-content-between second-row">
+          <div className="row second-row">
             <div
               id="current-conditions"
               className="col-6 mb-3 first-col-second-row"
@@ -133,7 +133,7 @@ export default function Weather() {
             </div>
           </div>
           <div id="forecast" className="row justify-content-around third-row">
-            {/*<div id="forecast-day-1" className="col-2">
+            <div id="forecast-day-1" className="col-2">
               <div className="row">
                 <p>THU</p>
               </div>
@@ -177,7 +177,7 @@ export default function Weather() {
                 <i id="mon-icon" className="fa-solid fa-cloud-sun"></i>
                 <span id="mon-forecast">17 º | 10 º</span>
               </div>
-      </div>*/}
+      </div>
           </div>
           <div>
             <button id="github-button" type="button" title="Open-source code by Sonia 🐚">
