@@ -35,3 +35,60 @@ body {
   right: 240px;
   top: 15px;
 }
+
+#github-button {
+  font-family: "Arvo", serif;
+  border: none;
+  border-radius: 30px;
+  background-color: transparent;
+}
+
+.github-icon {
+  color: transparent;
+  font-size: 110px;
+  position: absolute;
+  top: 290px;
+  left: 1395px;
+}
+
+.footer {
+  font-size: 12px;
+  font-family: "Arvo", serif;
+  color: #00b6e9;
+  position: absolute;
+  right: 190px;
+  top: 800px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: #00b6e9;
+}
+
+.github-link:hover {
+  cursor: grab;
+  color: #fcf4ef;
+}
+
+.github-link:hover:active {
+  cursor: grabbing;
+}
+
+.swal2-image {
+  font-size: 5px;
+}
+
+.swal2-title {
+  font-family: "Arvo", serif;
+  font-size: 29px !important;
+}
+
+.swal2-html-container {
+  font-family: "Arvo", serif;
+  font-size: 16px !important;
+}
+
+.swal2-confirm {
+  font-family: "Arvo", serif;
+  font-size: 14px !important;
+}
