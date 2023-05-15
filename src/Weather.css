@@ -158,13 +158,7 @@ audio {
 #h1 {
   font-size: 60px;
   margin: 0;
-  padding-top: 20px;
-}
-
-#current-temp {
-  font-size: 60px;
-  margin: 0;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 #current-feels-like {
@@ -224,7 +218,7 @@ audio {
   border: transparent;
   border-radius: 30px;
   padding-top: 15px;
-  width: 150px;
+  width: 145px;
   outline: none;
   font-family: "Arvo", serif;
   color: #ffffff;
