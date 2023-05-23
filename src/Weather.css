@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 
-#search-input {
+.search-input {
   border: transparent;
   border-radius: 30px;
   background-color: #6bb888;
@@ -23,7 +23,7 @@ input::placeholder {
   color: #ffffff;
 }
 
-#delete-button {
+.delete-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -47,7 +47,7 @@ input::placeholder {
   color: #ffffff;
 }
 
-#search-button {
+.search-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -56,7 +56,7 @@ input::placeholder {
   margin-left: -46px;
 }
 
-#secondary-buttons {
+.secondary-buttons {
   list-style-type: none;
   padding: 0;
   text-align: center;
@@ -72,13 +72,13 @@ input::placeholder {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#secondary-button-1,
-#secondary-button-2,
-#secondary-button-3 {
+.secondary-button-1,
+.secondary-button-2,
+.secondary-button-3 {
   display: inline;
 }
 
-#location-button {
+.location-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -91,7 +91,7 @@ input::placeholder {
   color: #ffffff;
 }
 
-#fahrenheit-celsius-button {
+.fahrenheit-celsius-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -103,7 +103,7 @@ input::placeholder {
   font-weight: bold;
 }
 
-#play-pause-button {
+.play-pause-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -128,7 +128,7 @@ audio {
   margin-left: 0.5px;
 }
 
-#current-conditions {
+.current-conditions {
   border: transparent;
   border-radius: 30px;
   background-color: #b7b398;
@@ -142,33 +142,33 @@ audio {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#humidity-span,
-#wind-span {
+.humidity-span,
+.wind-span {
   font-size: 14px;
 }
 
-#current-max-min-temps,
-#current-humidity,
-#current-wind,
+.current-max-min-temps,
+.current-humidity,
+.current-wind,
 .humidity-icon,
 .wind-icon {
   font-size: 14px;
 }
 
-#h1 {
+.h1 {
   font-size: 60px;
   margin: 0;
   padding-top: 10px;
 }
 
-#current-feels-like {
+.current-feels-like {
   padding-top: 5px;
   padding-bottom: 40px;
   margin: 0;
   font-size: 13px;
 }
 
-#date-city-weather-column {
+.date-city-weather-column {
   border: transparent;
   border-radius: 30px;
   background-color: #f28b73;
@@ -181,28 +181,28 @@ audio {
   text-align: right;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
-#current-day {
+.current-day {
   font-size: 16px;
 }
 
-#current-city {
+.current-city {
   font-size: 40px;
 }
 
-#current-weather-icon {
+.current-weather-icon {
   font-size: 60px;
   position: relative;
   top: 10px;
 }
 
-#current-weather-text {
+.current-weather-text {
   font-size: 16px;
   position: relative;
   top: 25px;
   right: 3px;
 }
 
-#current-weather-text::first-letter {
+.current-weather-text::first-letter {
   text-transform: uppercase;
 }
 
@@ -210,11 +210,11 @@ audio {
   padding-top: 30px;
 }
 
-#forecast-day-1,
-#forecast-day-2,
-#forecast-day-3,
-#forecast-day-4,
-#forecast-day-5 {
+.forecast-day-1,
+.forecast-day-2,
+.forecast-day-3,
+.forecast-day-4,
+.forecast-day-5 {
   border: transparent;
   border-radius: 30px;
   padding-top: 15px;
@@ -226,39 +226,39 @@ audio {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#forecast-day-1 {
+.forecast-day-1 {
   background-color: #f28b73;
 }
 
-#forecast-day-2 {
+.forecast-day-2 {
   background-color: #74c894;
 }
 
-#forecast-day-3 {
+.forecast-day-3 {
   background-color: #85cfe2;
 }
 
-#forecast-day-4 {
+.forecast-day-4 {
   background-color: #fbacc7;
 }
 
-#forecast-day-5 {
+.forecast-day-5 {
   background-color: #b7b398;
 }
 
-#thu-icon,
-#fri-icon,
-#sat-icon,
-#sunday-icon,
-#mon-icon {
+.thu-icon,
+.fri-icon,
+.sat-icon,
+.sunday-icon,
+.mon-icon {
   font-size: 40px;
 }
 
-#thu-forecast,
-#fri-forecast,
-#sat-forecast,
-#sun-forecast,
-#mon-forecast {
+.thu-forecast,
+.fri-forecast,
+.sat-forecast,
+.sun-forecast,
+.mon-forecast {
   padding-top: 15px;
   padding-bottom: 15px;
 }
