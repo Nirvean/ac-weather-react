@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
+import FormattedHour from "./FormattedHour";
 import "./App.css";
 import "./Weather.css";
 
@@ -15,8 +17,10 @@ export default function Weather(props) {
       feelsLike: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
+      hour: new Date(response.data.dt * 1000),
       location: response.data.name,
-      conditions: response.data.weather[0].main,
+      weatherConditions: response.data.weather[0].main,
     });
   }
 
@@ -128,8 +132,12 @@ export default function Weather(props) {
           </div>
           <div className="col-6 mb-3 second-col-second-row date-city-weather-column">
             <div className="row">
-              <span className="current-local-date">Wednesday, December 14</span>
-              <span className="current-local-hour">19:14</span>
+              <span className="current-local-date">
+                <FormattedDate date={weatherData.date} />
+              </span>
+              <span className="current-local-hour">
+                <FormattedHour date={weatherData.hour} />
+              </span>
             </div>
             <div className="row">
               <h2 className="current-city">{weatherData.location}</h2>
@@ -138,7 +146,9 @@ export default function Weather(props) {
               <i className="fa-solid fa-cloud-rain current-weather-icon"></i>
             </div>
             <div className="row">
-              <p className="current-weather-text">{weatherData.conditions}</p>
+              <p className="current-weather-text">
+                {weatherData.weatherConditions}
+              </p>
             </div>
           </div>
         </div>
