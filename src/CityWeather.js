@@ -3,6 +3,8 @@ import FormattedDate from "./FormattedDate";
 import FormattedHour from "./FormattedHour";
 import WeatherIcons from "./WeatherIcons";
 import "./CityWeather.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
 
 export default function CityWeather(props) {
   return (
@@ -34,7 +36,7 @@ export default function CityWeather(props) {
         </div>
         <div className="row">
           <div className="col-6">
-            <i className="fa-solid fa-droplet humidity-icon"></i>
+            <FontAwesomeIcon icon={faDroplet} className="humidity-icon" />
             <span className="humidity-span">
               <span className="current-humidity">
                 {" "}
@@ -44,7 +46,7 @@ export default function CityWeather(props) {
             </span>
           </div>
           <div className="col-6">
-            <i className="fa-solid fa-wind wind-icon"></i>
+            <FontAwesomeIcon icon={faWind} className="wind-icon" />
             <span className="wind-span">
               <span className="current-wind"> </span>
               {Math.round(props.data.wind)} km/h

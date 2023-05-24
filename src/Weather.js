@@ -5,6 +5,13 @@ import CityForecast from "./CityForecast";
 import GithubButton from "./GithubButton";
 import "./App.css";
 import "./Weather.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faXmark,
+  faMagnifyingGlass,
+  faLocationDot,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -56,11 +63,14 @@ export default function Weather(props) {
                 onChange={updateCity}
               />
               <button className="delete-button" type="reset" title="Clear">
-                <i className="fa-solid fa-xmark delete-icon"></i>
+                <FontAwesomeIcon icon={faXmark} className="delete-icon" />
               </button>
               <span className="lbar">|</span>
               <button className="search-button" type="submit" title="Search">
-                <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className="search-icon"
+                />
               </button>
             </form>
           </div>
@@ -72,7 +82,10 @@ export default function Weather(props) {
                   type="button"
                   title="Current location"
                 >
-                  <i className="fa-solid fa-location-dot location-icon"></i>
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className="location-icon"
+                  />
                 </button>
               </li>
               <li className="secondary-button-2">
@@ -97,7 +110,7 @@ export default function Weather(props) {
                   type="button"
                   title="Play music"
                 >
-                  <i className="fa-solid fa-play play-icon"></i>
+                  <FontAwesomeIcon icon={faPlay} className="play-icon" />
                 </button>
               </li>
             </ul>
