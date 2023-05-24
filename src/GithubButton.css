@@ -1,0 +1,23 @@
+.github-button {
+  font-family: "Arvo", serif;
+  border: none;
+  border-radius: 30px;
+  background-color: transparent;
+}
+
+.github-icon {
+  color: transparent;
+  font-size: 110px;
+  position: absolute;
+  top: 315px;
+  left: 1435px;
+}
+
+.github-link:hover {
+  cursor: grab;
+  color: #fcf4ef;
+}
+
+.github-link:hover:active {
+  cursor: grabbing;
+}

@@ -1,0 +1,56 @@
+.third-row {
+  padding-top: 30px;
+}
+
+.forecast-day-1,
+.forecast-day-2,
+.forecast-day-3,
+.forecast-day-4,
+.forecast-day-5 {
+  border: transparent;
+  border-radius: 30px;
+  padding-top: 15px;
+  width: 145px;
+  outline: none;
+  font-family: "Arvo", serif;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-day-1 {
+  background-color: #f28b73;
+}
+
+.forecast-day-2 {
+  background-color: #74c894;
+}
+
+.forecast-day-3 {
+  background-color: #85cfe2;
+}
+
+.forecast-day-4 {
+  background-color: #fbacc7;
+}
+
+.forecast-day-5 {
+  background-color: #b7b398;
+}
+
+.thu-icon,
+.fri-icon,
+.sat-icon,
+.sunday-icon,
+.mon-icon {
+  font-size: 40px;
+}
+
+.thu-forecast,
+.fri-forecast,
+.sat-forecast,
+.sun-forecast,
+.mon-forecast {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

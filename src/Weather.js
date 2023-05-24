@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
-import FormattedHour from "./FormattedHour";
+import CityWeather from "./CityWeather";
+import CityForecast from "./CityForecast";
+import GithubButton from "./GithubButton";
 import "./App.css";
 import "./Weather.css";
+import "./CityWeather.css";
+import "./CityForecast.css";
+import "./GithubButton.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
+  const [city, setCity] = useState(props.initialLocation);
 
   function showWeatherData(response) {
     setWeatherData({
@@ -24,17 +29,33 @@ export default function Weather(props) {
     });
   }
 
+  function searchCity() {
+    const apiKey = "769b0349d496f23c694b6fce62f1ecac";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeatherData);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.loaded === true) {
     return (
       <div className="Weather">
         <div className="row first-row">
           <div className="col-9 mt-3 mb-3">
-            <form className="search-form" action="#">
+            <form className="search-form" action="#" onSubmit={handleSubmit}>
               <input
                 className="search-input"
                 type="text"
                 placeholder="Search city"
                 autoComplete="off"
+                onChange={updateCity}
               />
               <button className="delete-button" type="reset" title="Clear">
                 <i className="fa-solid fa-xmark delete-icon"></i>
@@ -84,147 +105,13 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <div className="row second-row">
-          <div className="col-6 mb-3 first-col-second-row current-conditions">
-            <div className="row current-max-min-temps">
-              <div className="col-6 current-max-temp">
-                <p>Max.: {Math.round(weatherData.maxTemp)} ºC ↑</p>
-              </div>
-              <div className="col-6 current-min-temp">
-                <p>Min.: {Math.round(weatherData.minTemp)} ºC ↓</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1 className="h1">
-                  <span className="current-temp">
-                    {Math.round(weatherData.currentTemp)} ºC
-                  </span>
-                </h1>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <p className="current-feels-like">
-                  Feels like {Math.round(weatherData.feelsLike)} ºC
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                <i className="fa-solid fa-droplet humidity-icon"></i>
-                <span className="humidity-span">
-                  <span className="current-humidity">
-                    {" "}
-                    {Math.round(weatherData.humidity)}
-                  </span>{" "}
-                  %
-                </span>
-              </div>
-              <div className="col-6">
-                <i className="fa-solid fa-wind wind-icon"></i>
-                <span className="wind-span">
-                  <span className="current-wind"> </span>
-                  {Math.round(weatherData.wind)} km/h
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="col-6 mb-3 second-col-second-row date-city-weather-column">
-            <div className="row">
-              <span className="current-local-date">
-                <FormattedDate date={weatherData.date} />
-              </span>
-              <span className="current-local-hour">
-                <FormattedHour date={weatherData.hour} />
-              </span>
-            </div>
-            <div className="row">
-              <h2 className="current-city">{weatherData.location}</h2>
-            </div>
-            <div className="row">
-              <i className="fa-solid fa-cloud-rain current-weather-icon"></i>
-            </div>
-            <div className="row">
-              <p className="current-weather-text">
-                {weatherData.weatherConditions}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="row justify-content-around third-row forecast">
-          <div className="col-2 forecast-day-1">
-            <div className="row">
-              <p>THU</p>
-            </div>
-            <div className="row forecast-day">
-              <i className="fa-solid fa-cloud-rain thu-icon"></i>
-              <span className="thu-forecast">18 º | 13 º</span>
-            </div>
-          </div>
-          <div className="col-2 forecast-day-2">
-            <div className="row">
-              <p>FRI</p>
-            </div>
-            <div className="row forecast-day">
-              <i className="fa-solid fa-cloud-rain fri-icon"></i>
-              <span className="fri-forecast">16 º | 9 º</span>
-            </div>
-          </div>
-          <div className="col-2 forecast-day-3">
-            <div className="row">
-              <p>SAT</p>
-            </div>
-            <div className="row forecast-day">
-              <i className="fa-solid fa-cloud-rain sat-icon"></i>
-              <span className="sat-forecast">17 º | 9 º</span>
-            </div>
-          </div>
-          <div className="col-2 forecast-day-4">
-            <div className="row">
-              <p>SUN</p>
-            </div>
-            <div className="row forecast-day">
-              <i className="fa-solid fa-sun sunday-icon"></i>
-              <span className="sun-forecast">18 º | 9 º</span>
-            </div>
-          </div>
-          <div className="col-2 forecast-day-5">
-            <div className="row">
-              <p>MON</p>
-            </div>
-            <div className="row forecast-day">
-              <i className="fa-solid fa-cloud-sun mon-icon"></i>
-              <span className="mon-forecast">17 º | 10 º</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <button
-            className="github-button"
-            type="button"
-            title="Open-source code by Sonia 🐚"
-          >
-            <a
-              href="https://github.com/Nirvean/ac-weather-react"
-              className="github-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-github github-icon"></i>
-            </a>
-          </button>
-          {/*<footer className="footer">
-              <a href="https://github.com/Nirvean/ac-weather-react" className="github-link" target="_blank" rel="noreferrer">Open-source code</a> by Sonia 🐚
-      </footer>*/}
-        </div>
+        <CityWeather data={weatherData} />
+        <CityForecast />
+        <GithubButton />
       </div>
     );
   } else {
-    const apiKey = "769b0349d496f23c694b6fce62f1ecac";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.initialLocation}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showWeatherData);
-
+    searchCity();
     return "Loading...";
   }
 }

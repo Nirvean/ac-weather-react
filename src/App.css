@@ -37,44 +37,6 @@ body {
   max-width: 50%;
 }
 
-.github-button {
-  font-family: "Arvo", serif;
-  border: none;
-  border-radius: 30px;
-  background-color: transparent;
-}
-
-.github-icon {
-  color: transparent;
-  font-size: 110px;
-  position: absolute;
-  top: 315px;
-  left: 1435px;
-}
-
-/*.footer {
-  font-size: 12px;
-  font-family: "Arvo", serif;
-  color: #00b6e9;
-  position: absolute;
-  right: 190px;
-  top: 800px;
-}*/
-
-.github-link {
-  text-decoration: none;
-  color: #00b6e9;
-}
-
-.github-link:hover {
-  cursor: grab;
-  color: #fcf4ef;
-}
-
-.github-link:hover:active {
-  cursor: grabbing;
-}
-
 .swal2-image {
   font-size: 5px;
 }
