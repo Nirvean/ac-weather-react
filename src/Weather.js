@@ -22,6 +22,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       hour: new Date(response.data.dt * 1000),
       location: response.data.name,
+      icon: response.data.weather[0].icon,
       weatherConditions: response.data.weather[0].main,
     });
   }

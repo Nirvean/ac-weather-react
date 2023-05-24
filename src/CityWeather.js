@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import FormattedHour from "./FormattedHour";
+import WeatherIcons from "./WeatherIcons";
 import "./CityWeather.css";
 
 export default function CityWeather(props) {
@@ -63,8 +64,10 @@ export default function CityWeather(props) {
         <div className="row">
           <h2 className="current-city">{props.data.location}</h2>
         </div>
-        <div className="row">
-          <i className="fa-solid fa-cloud-rain current-weather-icon"></i>
+        <div className="row current-weather-icon">
+          <div>
+            <WeatherIcons code={props.data.icon} />
+          </div>
         </div>
         <div className="row">
           <p className="current-weather-text">{props.data.weatherConditions}</p>
