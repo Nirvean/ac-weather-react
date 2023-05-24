@@ -5,9 +5,6 @@ import CityForecast from "./CityForecast";
 import GithubButton from "./GithubButton";
 import "./App.css";
 import "./Weather.css";
-import "./CityWeather.css";
-import "./CityForecast.css";
-import "./GithubButton.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -112,6 +109,6 @@ export default function Weather(props) {
     );
   } else {
     searchCity();
-    return "Loading...";
+    return;
   }
 }

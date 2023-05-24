@@ -1,6 +1,5 @@
 import Weather from "./Weather";
 import "./App.css";
-import "./GithubButton.css";
 
 function App() {
   return (
