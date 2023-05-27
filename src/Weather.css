@@ -58,26 +58,21 @@ input::placeholder {
 
 .secondary-buttons {
   list-style-type: none;
-  padding: 0;
   text-align: center;
   border: transparent;
   border-radius: 30px;
   background-color: #6bb888;
-  padding: 10px 20px 10px 20px;
-  width: calc(100% - 20px);
+  padding: 8px 20px 8px 20px;
+  max-width: 85%;
   outline: none;
   font-family: "Arvo", serif;
-  position: relative;
-  left: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  left: 15px;
 }
 
-.secondary-button-1,
-.secondary-button-2 {
+.secondary-button-1 {
   display: inline;
-}
-
-.location-button {
   font-family: "Arvo", serif;
   border: none;
   border-radius: 30px;
@@ -86,29 +81,29 @@ input::placeholder {
   left: -15px;
 }
 
+.secondary-button-2 {
+  display: inline;
+  font-family: "Arvo", serif;
+  border: none;
+  border-radius: 30px;
+  color: transparent;
+  background-color: #6bb888;
+  position: relative;
+  left: 15px;
+}
+
+.location-button {
+  border-color: transparent;
+  background-color: transparent;
+}
+
 .location-icon {
   color: #ffffff;
 }
 
-.fahrenheit-celsius-button {
-  font-family: "Arvo", serif;
-  border: none;
-  border-radius: 30px;
-  background-color: #6bb888;
-}
-
-.fahrenheit-symbol {
-  color: #ffffff;
-  font-weight: bold;
-}
-
 .play-pause-button {
-  font-family: "Arvo", serif;
-  border: none;
-  border-radius: 30px;
-  background-color: #6bb888;
-  position: relative;
-  left: 15px;
+  border-color: transparent;
+  background-color: transparent;
 }
 
 .play-icon,
