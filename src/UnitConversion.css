@@ -1,0 +1,14 @@
+.unit-conversion-button {
+  font-family: "Arvo", serif;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.unit-conversion-symbol {
+  color: #ffffff;
+  font-size: 18px;
+  position: relative;
+  top: -30px;
+  left: 15px;
+}
