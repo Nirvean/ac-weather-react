@@ -89,15 +89,6 @@ export default function Weather(props) {
                 </button>
               </li>
               <li className="secondary-button-2">
-                <button
-                  className="fahrenheit-celsius-button"
-                  type="button"
-                  title="Change temp unit"
-                >
-                  <span className="fahrenheit-symbol">ºF</span>
-                </button>
-              </li>
-              <li className="secondary-button-3">
                 <audio controls id="audio">
                   <source
                     src="https://audio.jukehost.co.uk/QeMcZD4Axh76BZWaUtZkWNhykbEJTmBI"

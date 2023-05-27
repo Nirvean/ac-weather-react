@@ -13,7 +13,6 @@
   width: 300px;
   outline: none;
   font-family: "Arvo", serif;
-  position: relative;
   color: #ffffff;
   text-align: center;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
@@ -24,25 +23,11 @@
   font-size: 14px;
 }
 
-.current-max-min-temps,
 .current-humidity,
 .current-wind,
 .humidity-icon,
 .wind-icon {
   font-size: 14px;
-}
-
-.h1 {
-  font-size: 60px;
-  margin: 0;
-  padding-top: 10px;
-}
-
-.current-feels-like {
-  padding-top: 5px;
-  padding-bottom: 40px;
-  margin: 0;
-  font-size: 13px;
 }
 
 .date-city-weather-column {
@@ -57,9 +42,6 @@
   color: #ffffff;
   text-align: right;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-}
-.current-day {
-  font-size: 16px;
 }
 
 .current-city {

@@ -73,8 +73,7 @@ input::placeholder {
 }
 
 .secondary-button-1,
-.secondary-button-2,
-.secondary-button-3 {
+.secondary-button-2 {
   display: inline;
 }
 

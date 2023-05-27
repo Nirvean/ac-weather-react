@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./UnitConversion.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 export default function UnitConversion(props) {
   const [unit, setUnit] = useState("celsius");
@@ -45,23 +43,18 @@ export default function UnitConversion(props) {
         </div>
         <div className="row">
           <div className="col-12">
-            <h1 className="h1">
-              <span className="current-temp">
-                {Math.round(props.data.currentTemp)} ºC
-              </span>
-              <span>
-                <button
-                  className="unit-conversion-button"
-                  type="button"
-                  title="Change temp unit"
-                  onClick={convertToFahrenheit}
-                >
-                  <FontAwesomeIcon
-                    icon={faGear}
-                    className="unit-conversion-symbol"
-                  />
-                </button>
-              </span>
+            <h1>
+              <span className="h1">{Math.round(props.data.currentTemp)}</span>
+              <span className="unit-current-temp-chosen"> ºC</span>
+              <span className="unit-current-temp-bar">|</span>
+              <button
+                className="unit-conversion-button"
+                type="button"
+                title="Change temp unit"
+                onClick={convertToFahrenheit}
+              >
+                <span> ºF</span>
+              </button>
             </h1>
           </div>
         </div>
@@ -87,21 +80,18 @@ export default function UnitConversion(props) {
         </div>
         <div className="row">
           <div className="col-12">
-            <h1 className="h1">
-              <span className="current-temp">{fahrenheitCurrentTemp()} ºF</span>
-              <span>
-                <button
-                  className="unit-conversion-button"
-                  type="button"
-                  title="Change temp unit"
-                  onClick={convertToCelsius}
-                >
-                  <FontAwesomeIcon
-                    icon={faGear}
-                    className="unit-conversion-symbol"
-                  />
-                </button>
-              </span>
+            <h1>
+              <span className="h1">{fahrenheitCurrentTemp()}</span>
+              <span className="unit-current-temp-chosen"> ºF</span>
+              <span className="unit-current-temp-bar">|</span>
+              <button
+                className="unit-conversion-button"
+                type="button"
+                title="Change temp unit"
+                onClick={convertToCelsius}
+              >
+                <span> ºC</span>
+              </button>
             </h1>
           </div>
         </div>
