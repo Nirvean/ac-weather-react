@@ -18,7 +18,6 @@ export default function CityForecast(props) {
   }
 
   if (loaded === true) {
-    console.log(forecastData);
     return (
       <div className="row justify-content-around third-row forecast">
         {forecastData.map(function (fiveDayForecast, index) {
