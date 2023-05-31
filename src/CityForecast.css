@@ -2,6 +2,15 @@
   padding-top: 30px;
 }
 
+.forecast-weekday {
+  margin-bottom: 11px;
+}
+
+.forecast-day canvas {
+  width: 45%;
+  margin: auto;
+}
+
 .forecast-day-1,
 .forecast-day-2,
 .forecast-day-3,
@@ -36,21 +45,4 @@
 
 .forecast-day-5 {
   background-color: #b7b398;
-}
-
-.thu-icon,
-.fri-icon,
-.sat-icon,
-.sunday-icon,
-.mon-icon {
-  font-size: 40px;
-}
-
-.thu-forecast,
-.fri-forecast,
-.sat-forecast,
-.sun-forecast,
-.mon-forecast {
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
