@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import CityForecastWeekday from "./CityForecastWeekday";
 import "./CityForecast.css";
@@ -7,12 +7,17 @@ export default function CityForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState(null);
 
+  //To refresh the five-day forecast (new API call) after searching for a new location
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]); //setLoaded to false if the props.coordinates change
+
   function showForecastData(response) {
     setForecastData(response.data.daily);
     setLoaded(true);
   }
 
-  if (loaded) {
+  if (loaded === true) {
     console.log(forecastData);
     return (
       <div className="row justify-content-around third-row forecast">
