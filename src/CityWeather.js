@@ -35,10 +35,14 @@ export default function CityWeather(props) {
       <div className="col-6 mb-3 second-col-second-row date-city-weather-column">
         <div className="row">
           <span className="current-local-date">
-            <FormattedDate date={props.data.date} />
+            <FormattedDate
+              /*date={props.data.date} UTC*/ date={props.data.timezone}
+            />
           </span>
           <span className="current-local-hour">
-            <FormattedHour date={props.data.hour} />
+            <FormattedHour
+              /*data={props.data.hour} UTC*/ hour={props.data.timezone}
+            />
           </span>
         </div>
         <div className="row">
