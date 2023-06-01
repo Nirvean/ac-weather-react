@@ -22,10 +22,11 @@ export default function FormattedHour(props) {
     </div>
   );
 }
+
 /*To get UTC
 
 export default function FormattedHour(props) {
-  let hours = props.data.getHours();
+  let hours = props.hour.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }

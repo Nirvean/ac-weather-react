@@ -29,9 +29,9 @@ export default function Weather(props) {
       feelsLike: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      date: new Date(response.data.timezone), // Local date
+      localDate: new Date(response.data.timezone),
       /*date: new Date(response.data.dt * 1000),*/ // UTC
-      hour: new Date(response.data.timezone), // Local time
+      localHour: new Date(response.data.timezone),
       /*hour: new Date(response.data.dt * 1000),*/ // UTC
       location: response.data.name,
       icon: response.data.weather[0].icon,
