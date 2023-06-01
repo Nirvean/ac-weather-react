@@ -56,6 +56,28 @@ input::placeholder {
   margin-left: -46px;
 }
 
+.swal2-image {
+  margin-top: 15px;
+  margin-bottom: 4px;
+  width: 26%;
+}
+
+.swal2-title {
+  font-family: "Arvo", serif;
+  font-size: 27px !important;
+  padding-bottom: 5px;
+}
+
+.swal2-html-container {
+  font-family: "Arvo", serif;
+  font-size: 16px !important;
+}
+
+.swal2-confirm {
+  font-family: "Arvo", serif;
+  font-size: 14px !important;
+}
+
 .secondary-buttons {
   list-style-type: none;
   text-align: center;

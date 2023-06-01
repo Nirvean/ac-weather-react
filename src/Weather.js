@@ -12,6 +12,7 @@ import {
   faLocationDot,
   faPlay,
 } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -40,7 +41,22 @@ export default function Weather(props) {
     const apiKey = "769b0349d496f23c694b6fce62f1ecac";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).then(showWeatherData);
+    axios
+      .get(apiUrl)
+      .then(showWeatherData)
+      .catch((error) => {
+        //Resetti alert for invalid location
+        Swal.fire({
+          imageUrl: "https://i.imgur.com/45Ydv3s.png",
+          title: "...WHAT WAS THAT?!",
+          html: "Before hitting the search button, type in a VALID location! Type in a VALID one! <br> I KNOW you knew that. <br> <br> YA HEAR ME? <br> <br> <strong>NOW, SCRAM!</strong>",
+          confirmButtonText: "Okay...",
+          confirmButtonColor: "#6bb888",
+          width: 400,
+          height: 300,
+          allowOutsideClick: false,
+        });
+      });
   }
 
   function handleSubmit(event) {
