@@ -10,6 +10,7 @@ import {
   faXmark,
   faMagnifyingGlass,
   faLocationDot,
+  faPause,
   faPlay,
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
@@ -17,9 +18,9 @@ import Swal from "sweetalert2";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState(props.initialLocation);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   function showWeatherData(response) {
-    console.log(response.data);
     setWeatherData({
       loaded: true,
       coordinates: response.data.coord,
@@ -37,6 +38,11 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       weatherConditions: response.data.weather[0].main,
     });
+  }
+
+  //Music button
+  function handleTogglePlay() {
+    setIsPlaying((prevState) => !prevState);
   }
 
   //Search engine
@@ -126,20 +132,25 @@ export default function Weather(props) {
                 </button>
               </li>
               <li className="secondary-button-2">
-                <audio controls id="audio">
-                  <source
-                    src="https://audio.jukehost.co.uk/QeMcZD4Axh76BZWaUtZkWNhykbEJTmBI"
-                    type="audio/mp3"
-                  />
-                  Your browser does not support the audio element.
-                </audio>
                 <button
                   className="play-pause-button"
                   type="button"
                   title="Play music"
+                  onClick={handleTogglePlay}
                 >
-                  <FontAwesomeIcon icon={faPlay} className="play-icon" />
+                  {isPlaying ? (
+                    <FontAwesomeIcon icon={faPause} className="pause-icon" />
+                  ) : (
+                    <FontAwesomeIcon icon={faPlay} className="play-icon" />
+                  )}
                 </button>
+                {isPlaying ? (
+                  <audio
+                    src="https://audio.jukehost.co.uk/JNrrMdpABExr5kNeMDrGbTXQ82ZPNdMV"
+                    autoPlay
+                    controls
+                  />
+                ) : null}
               </li>
             </ul>
           </div>
