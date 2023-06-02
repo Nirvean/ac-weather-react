@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import CityWeather from "./CityWeather";
 import CityForecast from "./CityForecast";
@@ -19,6 +19,7 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState(props.initialLocation);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   function showWeatherData(response) {
     setWeatherData({
@@ -70,6 +71,13 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    //To pause the audio
+    if (isPlaying === true) {
+      audioRef.current.pause();
+    }
+
+    setIsPlaying(false); //To reset the play-pause button
     searchCity();
   }
 
@@ -146,6 +154,7 @@ export default function Weather(props) {
                 </button>
                 {isPlaying ? (
                   <audio
+                    ref={audioRef}
                     src="https://audio.jukehost.co.uk/JNrrMdpABExr5kNeMDrGbTXQ82ZPNdMV"
                     autoPlay
                     controls
