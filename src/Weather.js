@@ -46,6 +46,10 @@ export default function Weather(props) {
     setIsPlaying((prevState) => !prevState);
   }
 
+  function handleAudioEnded() {
+    setIsPlaying(false); //To change the pause icon to the play icon when the audio ends
+  }
+
   //Search engine
   function searchCity() {
     const apiKey = "769b0349d496f23c694b6fce62f1ecac";
@@ -158,6 +162,7 @@ export default function Weather(props) {
                     src="https://audio.jukehost.co.uk/JNrrMdpABExr5kNeMDrGbTXQ82ZPNdMV"
                     autoPlay
                     controls
+                    onEnded={handleAudioEnded}
                   />
                 ) : null}
               </li>
