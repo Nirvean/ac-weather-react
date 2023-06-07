@@ -82,6 +82,11 @@ export default function Weather(props) {
     }
 
     setIsPlaying(false); //To reset the play-pause button
+
+    if (city === "") {
+      return null;
+    }
+
     searchCity();
   }
 
