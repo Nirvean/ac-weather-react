@@ -18,6 +18,10 @@
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.reduce-height {
+  height: calc(100% - 15px);
+}
+
 .humidity-span,
 .wind-span {
   font-size: 14px;

@@ -8,9 +8,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
 
 export default function CityWeather(props) {
+  //To control the number of letters and words that fit in the column depending on the lenght of the city name
+  let cityName = props.data.location;
+  let fontSize = 40;
+  let cityClassName = "current-city";
+  let conditionsClassName = "current-conditions";
+
+  if (cityName.length > 11) {
+    //if the name of the city is a compound name
+    if (cityName.includes(" ")) {
+      fontSize -= cityName.split(" ").length;
+    } else {
+      //if the name of the city consists of a single word
+      const letters = Math.ceil(cityName.length / 4);
+      fontSize -= letters;
+      cityName = cityName.replace(/(.{14})/g, "$1 ");
+    }
+
+    conditionsClassName += " reduce-height"; //To reduce the column height if the city name occupies more than one line
+  }
+
   return (
     <div className="row second-row">
-      <div className="col-6 mb-3 first-col-second-row current-conditions">
+      <div className={`col-6 mb-3 first-col-second-row ${conditionsClassName}`}>
         <UnitConversion data={props.data} />
         <div className="row">
           <div className="col-6">
@@ -46,7 +66,9 @@ export default function CityWeather(props) {
           </span>
         </div>
         <div className="row">
-          <h2 className="current-city">{props.data.location}</h2>
+          <h2 className={cityClassName} style={{ fontSize: `${fontSize}px` }}>
+            {cityName}
+          </h2>
         </div>
         <div className="row current-weather-icon">
           <div>
