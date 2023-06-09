@@ -17,7 +17,13 @@ export default function CityWeather(props) {
   if (cityName.length > 11) {
     //if the name of the city is a compound name
     if (cityName.includes(" ")) {
-      fontSize -= cityName.split(" ").length;
+      const [firstName] = cityName.split(" ");
+      if (firstName.length > 11) {
+        const fontSizeReduction = Math.floor((firstName.length - 11) / 1);
+        fontSize -= fontSizeReduction;
+        const letters = Math.ceil(cityName.length / 4);
+        fontSize -= letters;
+      }
     } else {
       //if the name of the city consists of a single word
       const letters = Math.ceil(cityName.length / 4);
