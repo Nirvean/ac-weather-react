@@ -79,6 +79,9 @@ export default function Weather(props) {
 
   //Music button
   function handleTogglePlay() {
+    if (isPlaying) {
+      audioRef.current.pause();
+    }
     setIsPlaying((prevState) => !prevState);
   }
 
@@ -132,6 +135,11 @@ export default function Weather(props) {
 
   //Current location button
   function setCurrentLocation(position) {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     const apiKey = "769b0349d496f23c694b6fce62f1ecac";
