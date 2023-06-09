@@ -21,7 +21,42 @@ export default function Weather(props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
+  //Change of music track depending on the parts of the day
+  function getDayTime(response) {
+    const timeNow = new Date();
+    const cityInfo = response.data;
+    const timezone = cityInfo.timezone;
+    const localTime = timeNow.getTime();
+    const localOffset = timeNow.getTimezoneOffset() * 60000;
+    const utc = localTime + localOffset;
+    const cityDateCode = utc + 1000 * timezone;
+    const currentHour = new Date(cityDateCode).getHours();
+
+    if (currentHour >= 21 || currentHour < 6) {
+      return "night";
+    } else if (currentHour >= 6 && currentHour < 12) {
+      return "morning";
+    } else if (currentHour >= 12 && currentHour < 13) {
+      return "noon";
+    } else if (currentHour >= 13 && currentHour < 17) {
+      return "afternoon";
+    } else if (currentHour >= 17 && currentHour < 21) {
+      return "evening";
+    }
+  }
+
   function showWeatherData(response) {
+    const dayTime = getDayTime(response);
+
+    const audioUrls = {
+      night: "https://audio.jukehost.co.uk/P079LVYjwprIupeNpCRW0CrFzZYU60KW",
+      morning: "https://audio.jukehost.co.uk/3TzpVF4v4y5wdWThMKD3FCCVVS7oQQae",
+      noon: "https://audio.jukehost.co.uk/JNrrMdpABExr5kNeMDrGbTXQ82ZPNdMV",
+      afternoon:
+        "https://audio.jukehost.co.uk/QeMcZD4Axh76BZWaUtZkWNhykbEJTmBI",
+      evening: "https://audio.jukehost.co.uk/AD4k3WmtONihvYMSA2oHgqTWFGLfzHk8",
+    };
+
     setWeatherData({
       loaded: true,
       coordinates: response.data.coord,
@@ -38,6 +73,7 @@ export default function Weather(props) {
       location: response.data.name,
       icon: response.data.weather[0].icon,
       weatherConditions: response.data.weather[0].main,
+      audioUrl: audioUrls[dayTime],
     });
   }
 
@@ -164,7 +200,7 @@ export default function Weather(props) {
                 {isPlaying ? (
                   <audio
                     ref={audioRef}
-                    src="https://audio.jukehost.co.uk/JNrrMdpABExr5kNeMDrGbTXQ82ZPNdMV"
+                    src={weatherData.audioUrl}
                     autoPlay
                     controls
                     onEnded={handleAudioEnded}
