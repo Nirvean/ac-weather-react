@@ -3,8 +3,10 @@ import axios from "axios";
 import CityWeather from "./CityWeather";
 import CityForecast from "./CityForecast";
 import GithubButton from "./GithubButton";
+import Loader from "./Loader";
 import "./App.css";
 import "./Weather.css";
+import "./Loader.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faXmark,
@@ -225,6 +227,10 @@ export default function Weather(props) {
     );
   } else {
     searchCity();
-    return null;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 }
