@@ -2,18 +2,21 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .container {
-    transform: scale(0.67) translate(15%, -28%);
-    min-width: 73%;
+    transform: scale(0.65) translate(15%, -28%);
+    min-width: 69%;
   }
 
   body {
     overflow-y: hidden;
   }
 
+  .github-button {
+    left: 1255px;
+    bottom: 440px;
+  }
+
   .github-icon {
-    font-size: 400px !important;
-    top: 210px !important;
-    left: 1270px !important;
+    font-size: 400px;
   }
 }
 
