@@ -1,108 +1,75 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./UnitConversion.css";
+import UnitConversionContext from "./UnitConversionContext";
 
 export default function UnitConversion(props) {
-  const [unit, setUnit] = useState("celsius");
+  const { unit, toggleUnit } = useContext(UnitConversionContext);
 
   function convertToFahrenheit(event) {
     event.preventDefault();
-    setUnit("fahrenheit");
+    toggleUnit();
   }
 
   function convertToCelsius(event) {
     event.preventDefault();
-    setUnit("celsius");
+    toggleUnit();
   }
 
-  function fahrenheitMaxTemp() {
-    return Math.round((props.data.maxTemp * 9) / 5 + 32);
+  function convertTemperature(temperature) {
+    if (unit === "fahrenheit") {
+      return Math.round((temperature * 9) / 5 + 32);
+    }
+
+    return Math.round(temperature);
   }
 
-  function fahrenheitMinTemp() {
-    return Math.round((props.data.minTemp * 9) / 5 + 32);
-  }
-
-  function fahrenheitCurrentTemp() {
-    return Math.round((props.data.currentTemp * 9) / 5 + 32);
-  }
-
-  function fahrenheitFeelsLike() {
-    return Math.round((props.data.feelsLike * 9) / 5 + 32);
-  }
-
-  if (unit === "celsius") {
-    return (
-      <div>
-        <div className="row current-max-min-temps">
-          <div className="col-6 current-max-temp">
-            <p>Max.: {Math.round(props.data.maxTemp)} ºC ↑</p>
-          </div>
-          <div className="col-6 current-min-temp">
-            <p>Min.: {Math.round(props.data.minTemp)} ºC ↓</p>
-          </div>
+  return (
+    <div>
+      <div className="row current-max-min-temps">
+        <div className="col-6 current-max-temp">
+          <p>
+            Max.: {convertTemperature(props.data.maxTemp)}{" "}
+            {unit === "fahrenheit" ? "ºF" : "ºC"} ↑
+          </p>
         </div>
-        <div className="row">
-          <div className="col-12">
-            <h1>
-              <span className="h1">{Math.round(props.data.currentTemp)}</span>
-              <span className="unit-current-temp-chosen"> ºC</span>
-              <span className="unit-current-temp-bar">|</span>
-              <button
-                className="unit-conversion-button"
-                type="button"
-                title="Change temp unit"
-                onClick={convertToFahrenheit}
-              >
-                <span> ºF</span>
-              </button>
-            </h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <p className="current-feels-like">
-              Feels like {Math.round(props.data.feelsLike)} ºC
-            </p>
-          </div>
+        <div className="col-6 current-min-temp">
+          <p>
+            Min.: {convertTemperature(props.data.minTemp)}{" "}
+            {unit === "fahrenheit" ? "ºF" : "ºC"} ↓
+          </p>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div>
-        <div className="row current-max-min-temps">
-          <div className="col-6 current-max-temp">
-            <p>Max.: {fahrenheitMaxTemp()} ºF ↑</p>
-          </div>
-          <div className="col-6 current-min-temp">
-            <p>Min.: {fahrenheitMinTemp()} ºF ↓</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <h1>
-              <span className="h1">{fahrenheitCurrentTemp()}</span>
-              <span className="unit-current-temp-chosen"> ºF</span>
-              <span className="unit-current-temp-bar">|</span>
-              <button
-                className="unit-conversion-button"
-                type="button"
-                title="Change temp unit"
-                onClick={convertToCelsius}
-              >
-                <span> ºC</span>
-              </button>
-            </h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <p className="current-feels-like">
-              Feels like {fahrenheitFeelsLike()} ºF
-            </p>
-          </div>
+      <div className="row">
+        <div className="col-12">
+          <h1>
+            <span className="h1">
+              {convertTemperature(props.data.currentTemp)}
+            </span>
+            <span className="unit-current-temp-chosen">
+              {unit === "fahrenheit" ? " ºF" : " ºC"}
+            </span>
+            <span className="unit-current-temp-bar">|</span>
+            <button
+              className="unit-conversion-button"
+              type="button"
+              title="Change temp unit"
+              onClick={
+                unit === "celsius" ? convertToFahrenheit : convertToCelsius
+              }
+            >
+              <span>{unit === "celsius" ? " ºF" : " ºC"}</span>
+            </button>
+          </h1>
         </div>
       </div>
-    );
-  }
+      <div className="row">
+        <div className="col-12">
+          <p className="current-feels-like">
+            Feels like {convertTemperature(props.data.feelsLike)}{" "}
+            {unit === "fahrenheit" ? " ºF" : " ºC"}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
