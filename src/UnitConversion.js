@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import "./UnitConversion.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
 import UnitConversionContext from "./UnitConversionContext";
 
 export default function UnitConversion(props) {
@@ -18,9 +20,17 @@ export default function UnitConversion(props) {
   function convertTemperature(temperature) {
     if (unit === "fahrenheit") {
       return Math.round((temperature * 9) / 5 + 32);
+    } else {
+      return Math.round(temperature);
     }
+  }
 
-    return Math.round(temperature);
+  function convertToMph(speed) {
+    if (unit === "fahrenheit") {
+      return Math.round(speed * 0.621371);
+    } else {
+      return Math.round(speed);
+    }
   }
 
   return (
@@ -68,6 +78,27 @@ export default function UnitConversion(props) {
             Feels like {convertTemperature(props.data.feelsLike)}{" "}
             {unit === "fahrenheit" ? " ºF" : " ºC"}
           </p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-6">
+          <FontAwesomeIcon icon={faDroplet} className="humidity-icon" />
+          <span className="humidity-span">
+            <span className="current-humidity">
+              {" "}
+              {Math.round(props.data.humidity)}
+            </span>{" "}
+            %
+          </span>
+        </div>
+        <div className="col-6">
+          <FontAwesomeIcon icon={faWind} className="wind-icon" />
+          <span className="wind-span">
+            <span className="current-wind"> </span>
+            {unit === "fahrenheit"
+              ? `${convertToMph(props.data.wind)} mph`
+              : `${Math.round(props.data.wind)} km/h`}
+          </span>
         </div>
       </div>
     </div>
