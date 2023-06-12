@@ -86,7 +86,6 @@ input::placeholder {
   background-color: #6bb888;
   padding: 8px 20px 8px 20px;
   max-width: 85%;
-  outline: none;
   font-family: "Arvo", serif;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   position: relative;

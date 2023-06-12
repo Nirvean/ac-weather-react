@@ -4,11 +4,11 @@
   background-color: transparent;
   padding: 0;
   position: relative;
-  left: 1350px;
-  bottom: 345px;
+  left: 1315px;
+  bottom: 360px;
 }
 
 .github-icon {
-  color: transparent;
-  font-size: 185px;
+  color: blue;
+  font-size: 200px;
 }

@@ -156,7 +156,7 @@ export default function Weather(props) {
 
   if (weatherData.loaded === true) {
     return (
-      <div className="Weather">
+      <div>
         <div className="row first-row">
           <div className="col-9 mt-3 mb-3">
             <form className="search-form" action="#" onSubmit={handleSubmit}>
