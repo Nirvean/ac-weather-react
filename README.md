@@ -1,20 +1,3 @@
-# 🌴 Island Forecast React app
-
-- My **first React app** created as a certification project for SheCodes.
-- Inspired by the Animal Crossing saga.
-- Built using the [OpenWeather](https://openweathermap.org/api/one-call-api) API.
-
-## 🍒 Main features
-- Showcases the current weather data for any city.
-- Has a current location button.
-- Has a music button that plays five different music tracks from the Animal Crossing New Leaf game depending on the time of day in the city searched (morning, afternoon, noon, evening and night).
-- Displays the local time for each city.
-- Shows the forecast and the maximum and minimum temperatures for the next five weekdays.
-- Has a unit conversion button that switches between Celsius and Fahrenheit and between km/h and mph.
-
-## 🐚 Want to take a look?
-- Watch it LIVE [here](https://incandescent-shortbread-96b959.netlify.app/)! 🎊
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
