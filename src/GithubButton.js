@@ -9,12 +9,7 @@ export default function GithubButton() {
         type="button"
         title="Open-source code by Sonia 🐚"
       >
-        <a
-          href="https://github.com/Nirvean/ac-weather-react"
-          className="github-link"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="#" className="github-link" target="_blank" rel="noreferrer">
           <i className="fa-brands fa-github github-icon"></i>
         </a>
       </button>
